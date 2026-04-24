@@ -1,3 +1,32 @@
+/* PAGE INTRO */
+.intro-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: default;
+}
+
+/* CONTENU CENTRÉ */
+.intro-container {
+    text-align: center;
+}
+
+/* TITRE */
+.intro-title {
+    font-size: 3em;
+}
+
+.intro-title span {
+    font-size: 0.5em;
+    color: #ff00ff;
+}
+
+/* BOUTON */
+.intro-btn {
+    margin-top: 30px;
+}
+
 body {
     margin: 0;
     font-family: 'Tourney', sans-serif;
@@ -16,6 +45,9 @@ body {
     animation: backgroundMove 15s ease infinite;
 
     cursor: none;
+
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 @keyframes backgroundMove {
@@ -116,15 +148,6 @@ section {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-}
-
-.card {
-    width: 250px;
-    padding: 20px;
-    border: 1px solid transparent;
-    border-image: linear-gradient(90deg, #00f0ff, #ff00ff);
-    border-image-slice: 1;
-    transition: 0.3s;
 }
 
 .card:hover {
