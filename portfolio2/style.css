@@ -32,6 +32,7 @@ body {
     font-family: 'Tourney', sans-serif;
     color: white;
     overflow-x: hidden;
+    padding-top: 70px;
 
     background: linear-gradient(
         120deg,
@@ -47,7 +48,7 @@ body {
     cursor: none;
 
     opacity: 1;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s ease;
 }
 
 @keyframes backgroundMove {
@@ -276,3 +277,161 @@ body::after {
     transform-style: preserve-3d;
 }
 
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.navbar a {
+    color: #00f0ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.project-card {
+    width: 300px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #00f0ff, #ff00ff);
+    border-image-slice: 1;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-content {
+    padding: 15px;
+}
+
+.project-card:hover {
+    box-shadow:
+        0 0 15px #00f0ff,
+        0 0 30px #ff00ff;
+}
+
+.traits {
+    list-style: none;
+    padding: 0;
+}
+
+.traits li {
+    margin: 10px 0;
+}
+
+#chart {
+    width: 400px;
+    max-width: 90%;
+    margin: 50px auto;
+}
+
+.holographic {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #00f0ff, #ff00ff);
+    border-image-slice: 1;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 10px rgba(0,240,255,0.3),
+        0 0 20px rgba(255,0,255,0.2);
+
+    transition: 0.3s;
+}
+
+.holographic:hover {
+    box-shadow:
+        0 0 20px #00f0ff,
+        0 0 40px #ff00ff;
+}
+
+/* ===== HUD WINDOW (fenêtre futuriste) ===== */
+.hud-window {
+    width: 90%;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 20px;
+
+    position: relative;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 240, 255, 0.3);
+
+    box-shadow:
+        0 0 20px rgba(0,240,255,0.2),
+        inset 0 0 20px rgba(255,0,255,0.1);
+}
+
+/* Coins futuristes */
+.hud-window::before,
+.hud-window::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #00f0ff;
+}
+
+.hud-window::before {
+    top: -5px;
+    left: -5px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.hud-window::after {
+    bottom: -5px;
+    right: -5px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Header style (barre du haut type OS futuriste) */
+.hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(0,240,255,0.3);
+}
+
+/* Petits boutons style OS */
+.hud-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.hud-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00f0ff;
+    box-shadow: 0 0 5px #00f0ff;
+}
+
+/* Grille interne */
+.hud-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}

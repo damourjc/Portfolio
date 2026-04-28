@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio - Compétences - Jean-Cédric</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Police Tourney -->
+<link href="https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <div class="cursor"></div>
+
+    <nav class="navbar">
+        <a href="home.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="competences.html">Compétences</a>
+    </nav>
+
+    <!-- COMPETENCES -->
+    <section class="hidden holographic">
+        <div class="hud-window">
+
+            <div class="hud-header">
+                <h2 class="gradient-text">Compétences</h2>
+
+                <div class="hud-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="hud-grid">
+
+                <!-- Bloc 1 -->
+                <div>
+                    <div class="skill">
+                        <p>Python</p>
+                        <div class="bar">
+                            <div class="progress" style="width:70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <p>HTML</p>
+                        <div class="bar">
+                            <div class="progress" style="width:60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloc 2 -->
+                <div>
+                    <ul class="traits">
+                        <li>✔️ Créatif</li>
+                        <li>✔️ Persévérant</li>
+                        <li>⚠️ Perfectionniste</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hud-window">
+
+            <div class="hud-header">
+                <h2 class="gradient-text">Profil</h2>
+            </div>
+
+            <canvas id="chart"></canvas>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
+
+</body>
+</html>

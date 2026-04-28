@@ -37,9 +37,6 @@ if (canvas) {
     animateParticles();
 }
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
 const cursor = document.querySelector(".cursor");
 
 if (cursor) {
@@ -58,8 +55,6 @@ if (cursor) {
         });
     });
 }
-
-let particles = [];
 
 // Animation scroll
 const observer = new IntersectionObserver(entries => {
@@ -120,3 +115,18 @@ function enterSite() {
         window.location.href = "home.html";
     }, 500);
 }
+
+document.querySelectorAll("a").forEach(link => {
+    if (link.hostname === window.location.hostname) {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const url = this.href;
+
+            document.body.style.opacity = "0";
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 300);
+        });
+    }
+});

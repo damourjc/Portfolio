@@ -1,0 +1,23 @@
+:root {
+	--color-primary:   #1565C0;
+	--color-secondary: #E3F2FD;
+	--color-accent:    #FF8F00;
+	--color-text:      #1A2332;
+	--color-bg:        #FFFFFF;
+	--font-main:       'Segoe UI', sans-serif;
+	--spacing-lg:      64px;
+	--spacing-md:      32px;
+	--radius-card:     12px;
+}
+
+
+body {
+	font-family: var(--font-main);
+	color: var(--color-accent);
+	background: var(--color-secondary);
+}
+
+header {
+	background: var(--color-bg);
+    position: sticky;
+}

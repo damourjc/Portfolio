@@ -1,0 +1,10 @@
+portfolio/
+├── index.html          ← page d'accueil
+├── contact.html        ← page formulaire
+├── css/
+│   └── style.css       ← toutes les règles CSS
+├── img/
+│   └── (vos images)
+└── php/
+    ├── db.php          ← connexion BDD (séance 3)
+    └── contact.php     ← traitement formulaire (séance 2)
