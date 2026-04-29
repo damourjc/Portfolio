@@ -26,7 +26,8 @@
     <!-- COMPETENCES -->
     <section class="hidden holographic">
         <div class="hud-window">
-
+            <div class="hud-lines"></div>
+            <div class="scan-line"></div>
             <div class="hud-header">
                 <h2 class="gradient-text">Compétences</h2>
 
@@ -70,7 +71,8 @@
         </div>
 
         <div class="hud-window">
-
+            <div class="hud-lines"></div>
+            <div class="scan-line"></div>
             <div class="hud-header">
                 <h2 class="gradient-text">Profil</h2>
             </div>
@@ -79,10 +81,25 @@
 
         </div>
     </section>
+    <section>
+        <div class="hud-window">
+            <div class="hud-header">
+                <h2 class="gradient-text">Terminal</h2>
+            </div>
+
+            <div class="terminal-box">
+                <div id="terminal-output"></div>
+                <input type="text" id="terminal-input" placeholder="Tape une commande...">
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="chart.js"></script>
+
+    <audio id="hoverSound" src="hover.mp3"></audio>
+    <audio id="clickSound" src="click.mp3"></audio>
 
 </body>
 </html>

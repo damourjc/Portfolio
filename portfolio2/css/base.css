@@ -1,0 +1,56 @@
+/* ===== BASE / GLOBAL ===== */
+
+body {
+    margin: 0;
+    font-family: 'Tourney', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    padding-top: 70px;
+
+    background: linear-gradient(
+        120deg,
+        #0a0a0f,
+        #0a0a0f,
+        #001f2f,
+        #2a0030
+    );
+
+    background-size: 400% 400%;
+    animation: backgroundMove 15s ease infinite;
+
+    cursor: none;
+
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Animation fond */
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Effet lumière */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,240,255,0.1), transparent 70%);
+}
+
+/* Grille futuriste */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    from { background-position: 0 0; }
+    to { background-position: 0 100px; }
+}

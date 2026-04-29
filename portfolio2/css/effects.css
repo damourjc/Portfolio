@@ -1,0 +1,27 @@
+/* ===== EFFETS ===== */
+
+.neon {
+    color: #00f0ff;
+}
+
+/* Animation scroll */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.show {
+    opacity: 1;
+}
+
+/* Curseur */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+}
+
+/* Canvas */
+#particles {
+    position: fixed;
+}

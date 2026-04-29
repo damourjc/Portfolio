@@ -1,0 +1,37 @@
+/* ===== BOUTONS ===== */
+
+.btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid;
+}
+
+/* ===== CARTES ===== */
+
+.card {
+    width: 250px;
+    padding: 20px;
+}
+
+/* ===== PROJETS ===== */
+
+.projects {
+    display: flex;
+    gap: 20px;
+}
+
+/* ===== SKILLS ===== */
+
+.skill {
+    width: 300px;
+}
+
+.bar {
+    height: 10px;
+    background: #222;
+}
+
+.progress {
+    height: 10px;
+    background: linear-gradient(90deg, #00f0ff, #ff00ff);
+}

@@ -1,0 +1,29 @@
+/* ===== HUD WINDOWS ===== */
+
+.hud-window {
+    position: relative;
+    background: rgba(0,0,0,0.4);
+}
+
+/* Coins */
+.hud-window::before,
+.hud-window::after {
+    content: "";
+    position: absolute;
+}
+
+/* Lignes */
+.hud-lines {
+    position: absolute;
+    inset: 0;
+}
+
+/* Header */
+.hud-header {
+    display: flex;
+}
+
+/* Scan */
+.scan-line {
+    position: absolute;
+}

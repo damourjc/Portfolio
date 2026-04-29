@@ -1,0 +1,16 @@
+/* ===== PAGE INTRO ===== */
+
+.intro-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.intro-title {
+    font-size: 3em;
+}
+
+.intro-btn {
+    margin-top: 30px;
+}

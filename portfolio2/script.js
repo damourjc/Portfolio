@@ -130,3 +130,112 @@ document.querySelectorAll("a").forEach(link => {
         });
     }
 });
+
+const input = document.getElementById("terminal-input");
+const output = document.getElementById("terminal-output");
+
+if (input && output) {
+    input.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            const command = input.value;
+            output.innerHTML += `> ${command}<br>`;
+
+            function aiResponse(text) {
+                text = text.toLowerCase();
+
+                if (text.includes("bonjour") || text.includes("salut")) {
+                    return "Bonjour humain 👋";
+                }
+
+                if (text.includes("qui es tu")) {
+                    return "Je suis une IA intégrée dans ce portfolio.";
+                }
+
+                if (text.includes("python")) {
+                    return "Python est un langage puissant que j’utilise.";
+                }
+
+                if (text.includes("projet")) {
+                    return "Regarde la section projets pour voir mes créations.";
+                }
+
+                if (text.includes("clear")) {
+                    return "CLEAR_COMMAND";
+                }
+
+                return "Je n’ai pas compris ta demande.";
+            }
+
+            input.value = "";
+            output.scrollTop = output.scrollHeight;
+        }
+    });
+}
+
+document.addEventListener("click", () => {
+    if (input) input.focus();
+});
+
+document.querySelectorAll(".hud-window").forEach(windowEl => {
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    const header = windowEl.querySelector(".hud-header");
+
+    if (!header) return;
+
+    header.style.cursor = "move";
+
+    header.addEventListener("mousedown", (e) => {
+        isDragging = true;
+
+        offsetX = e.clientX - windowEl.offsetLeft;
+        offsetY = e.clientY - windowEl.offsetTop;
+
+        windowEl.style.position = "absolute";
+        windowEl.style.zIndex = 1000;
+
+        document.body.style.userSelect = "none";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        windowEl.style.left = (e.clientX - offsetX) + "px";
+        windowEl.style.top = (e.clientY - offsetY) + "px";
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+
+        document.body.style.userSelect = "auto";
+    });
+
+});
+
+const hoverSound = document.getElementById("hoverSound");
+const clickSound = document.getElementById("clickSound");
+
+document.querySelectorAll("button, a").forEach(el => {
+
+    el.addEventListener("mouseenter", () => {
+        if (hoverSound) {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        }
+    });
+
+    el.addEventListener("click", () => {
+        if (clickSound) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
+    });
+
+});
+
+document.addEventListener("click", () => {
+    if (hoverSound) hoverSound.volume = 0.2;
+    if (clickSound) clickSound.volume = 0.3;
+}, { once: true });

@@ -403,6 +403,22 @@ body::after {
     border-top: none;
 }
 
+.hud-lines {
+    position: absolute;
+    inset: 0;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,240,255,0.05) 0px,
+        rgba(0,240,255,0.05) 1px,
+        transparent 1px,
+        transparent 40px
+    );
+
+    animation: hudLines 4s linear infinite;
+    pointer-events: none;
+}
+
 /* Header style (barre du haut type OS futuriste) */
 .hud-header {
     display: flex;
@@ -493,4 +509,25 @@ body::after {
         top: 100%;
         opacity: 0;
     }
+}
+
+.terminal-box {
+    background: #050505;
+    padding: 15px;
+    font-family: monospace;
+    text-align: left;
+}
+
+#terminal-output {
+    height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#terminal-input {
+    width: 100%;
+    background: black;
+    border: none;
+    color: #00f0ff;
+    outline: none;
 }
