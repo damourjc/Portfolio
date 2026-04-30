@@ -1,9 +1,21 @@
 /* ===== BOUTONS ===== */
 
 .btn {
+    margin-top: 20px;
     padding: 10px 20px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #00f0ff, #ff00ff);
+    border-image-slice: 1;
+    color: white;
     background: transparent;
-    border: 1px solid;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow:
+        0 0 10px #00f0ff,
+        0 0 20px #ff00ff;
 }
 
 /* ===== CARTES ===== */

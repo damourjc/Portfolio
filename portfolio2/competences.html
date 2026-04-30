@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Portfolio - Compétences - Jean-Cédric</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/main.css">
 
 <!-- Police Tourney -->
 <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap" rel="stylesheet">
@@ -41,21 +41,7 @@
             <div class="hud-grid">
 
                 <!-- Bloc 1 -->
-                <div>
-                    <div class="skill">
-                        <p>Python</p>
-                        <div class="bar">
-                            <div class="progress" style="width:70%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill">
-                        <p>HTML</p>
-                        <div class="bar">
-                            <div class="progress" style="width:60%"></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="skills-container"></div>
 
                 <!-- Bloc 2 -->
                 <div>
@@ -94,9 +80,8 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="chart.js"></script>
 
     <audio id="hoverSound" src="hover.mp3"></audio>
     <audio id="clickSound" src="click.mp3"></audio>
