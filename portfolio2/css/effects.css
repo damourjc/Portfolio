@@ -1,33 +1,33 @@
 /* ===== EFFETS ===== */
 
 .neon {
-    color: #00f0ff;
+    color: #00f0ff;                       /*Simple mais efficace : couleur cyan futuriste / souvent combiné avec : text-shadow (pas ici, mais possible)*/
 }
 
 /* Animation scroll */
 .hidden {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50px);            /*Etat initial : invisible / décalé vers le bas*/
 }
 
 .show {
-    opacity: 1;
-}
+    opacity: 1;                             /*Etat final : visible / JS fait : element.classList.add("show"); / Résultat : effet "fade + slide"*/
+}                                           /*Suggestion d'amélioration : transition: all 0.5s ease; (sinon l’animation dépend d’ailleurs)*/
 
 /* Curseur */
 .cursor {
-    position: fixed;
+    position: fixed;                        /*Suit l’écran (pas le scroll)*/
     width: 20px;
-    height: 20px;
+    height: 20px;                           /*Taille du curseur*/
     background: #00f0ff;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
+    border-radius: 50%;                     /*Cercle cyan*/
+    pointer-events: none;                   /*Le curseur ne bloque pas les clics*/
+    transform: translate(-50%, -50%);       /*Centre le curseur sur la souris*/
+    z-index: 9999;                          /*Toujours au-dessus de tout*/
+}                                           /*Animé par : cursor.js*/
 
 /* Canvas */
 #particles {
-    position: fixed;
-    z-index: 0;
+    position: fixed;                        /*Fond derrière tout : fixed → ne bouge pas / z-index: 0 → en dessous*/
+    z-index: 0;                             /*Le reste du contenu est au-dessus*/
 }

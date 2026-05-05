@@ -3,14 +3,14 @@
 .intro-page {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    align-items: center;        /*Centre tout : horizontalement, verticalement*/
+    height: 100vh;              /*Prend toute la hauteur écran*/
+}                               /*Résultat : écran d’intro bien centré*/
 
 .intro-title {
-    font-size: 3em;
+    font-size: 3em;             /*Texte grand et visible*/
 }
 
 .intro-btn {
-    margin-top: 30px;
+    margin-top: 30px;           /*Espace entre titre et bouton*/
 }

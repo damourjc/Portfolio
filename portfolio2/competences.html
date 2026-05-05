@@ -24,7 +24,7 @@
     </nav>
 
     <!-- COMPETENCES -->
-    <section class="hidden holographic">
+    <section class="hidden holographic"> <!-- .hidden : invisible au départ - devient visible avec animation (scroll.js) / .holographic : style visuel spécial (effet futuriste)-->
         <div class="hud-window">
             <div class="hud-lines"></div>
             <div class="scan-line"></div>
@@ -38,14 +38,14 @@
                 </div>
             </div>
 
-            <div class="hud-grid">
+            <div class="hud-grid"> <!-- structure en colonnes-->
 
                 <!-- Bloc 1 -->
-                <div class="skills-container"></div>
+                <div class="skills-container"></div> <!-- ce conteneur est vide / il est rempli par JavaScript / via MVC : renderSkills(skills); dans : skillsView.js-->
 
                 <!-- Bloc 2 -->
                 <div>
-                    <ul class="traits">
+                    <ul class="traits"> <!-- liste simple : pas dynamique / purement statique-->
                         <li>✔️ Créatif</li>
                         <li>✔️ Persévérant</li>
                         <li>⚠️ Perfectionniste</li>
@@ -63,7 +63,7 @@
                 <h2 class="gradient-text">Profil</h2>
             </div>
 
-            <canvas id="chart"></canvas>
+            <canvas id="chart"></canvas> <!-- utilisé par : initChart(); dans : chart-config.js / librairie utilisé : voir le lien en-dessous / Résultats : graphique radar-->
 
         </div>
     </section>

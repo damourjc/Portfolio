@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8">                                                              <!-- Même commentaire que index.html-->
 <title>Portfolio - Projets - Jean-Cédric</title>
 
 <link rel="stylesheet" href="css/main.css">
@@ -25,22 +25,22 @@
 
     <!-- PROJETS -->
     <section class="hidden">
-        <div class="hud-window">
-            <div class="hud-lines"></div>
-            <div class="scan-line"></div>
-            <div class="hud-header">
+        <div class="hud-window">                        <!-- c’est une "fenêtre" style interface futuriste / design contrôlé par hud.css / comportement interactif via hud.js-->
+            <div class="hud-lines"></div>               <!-- hud-lines → grille/lignes-->  
+            <div class="scan-line"></div>               <!-- scan-line → effet scan (comme un radar)-->
+            <div class="hud-header">                    <!-- zone du haut (comme une fenêtre Windows)-->
                 <h2 class="gradient-text">Projets</h2>
 
-                <div class="hud-dots">
+                <div class="hud-dots">                  <!-- imite : fermer / réduire / agrandir - purement esthétique-->
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
 
-            <div id="projects-container" class="hud-grid">
-
-                <div class="project-card">
+            <div id="projects-container" class="hud-grid"> <!-- id="projects-container" → utilisé par MVC / hud-grid → layout (grille CSS)-->
+                                                           <!-- Ce bloc est : rempli dynamiquement par JavaScript via : renderProjects(projects); dans : projectsView.js-->
+                <div class="project-card">                  <!-- carte de projet-->
                     <img src="projet1.png" alt="Projet">
 
                     <div class="project-content">

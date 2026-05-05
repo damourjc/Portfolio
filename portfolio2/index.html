@@ -5,25 +5,27 @@
         <title>Bienvenue - Portfolio</title>
 
         <link rel="stylesheet" href="css/main.css">
-        <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap" rel="stylesheet"> <!-- Charge une police depuis Google Fonts, utilisée dans le CSS (font-family: 'Tourney') -->
 
     </head>
 
-    <body class="intro-page">
+    <body class="intro-page"> <!-- Classe spéciale → utilisée dans intro.css, pour centrer le contenu (flex + plein écran)-->
 
-        <div class="intro-container">
-            <h1 class="neon intro-title">
-                Jean-Cédric <span>Portfolio</span>
+        <div class="cursor"></div> <!-- Remplace le curseur classique, contrôlé par cursor.js-->
+
+        <div class="intro-container"> <!-- Sert à regrouper le contenu de la page-->
+            <h1 class="neon intro-title"> <!-- h1 → titre principal (important SEO) / neon → effet visuel (CSS)-->
+                Jean-Cédric <span>Portfolio</span> <!-- <span> → permet de styliser "Portfolio" différemment-->
             </h1>
 
-            <button class="btn intro-btn">
-                Bienvenue
+            <button class="btn intro-btn"> <!-- Bouton stylé avec .btn / .intro-btn → style spécifique-->
+                Bienvenue                   <!-- Fonction : déclenche une transition + redirection vers home.html (géré dans intro.js)-->
             </button>
         </div>
 
-        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/main.js"></script> <!-- type="module" → permet d’utiliser import/export. Lance tous tes modules JS. C’est le cœur dynamique du site-->
 
-        <audio id="hoverSound" src="hover.mp3"></audio>
+        <audio id="hoverSound" src="hover.mp3"></audio> <!-- Prépare les sons / Utilisés dans sounds.js-->
         <audio id="clickSound" src="click.mp3"></audio>
 
     </body>

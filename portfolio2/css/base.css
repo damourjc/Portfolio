@@ -1,13 +1,13 @@
 /* ===== BASE / GLOBAL ===== */
 
 body {
-    margin: 0;
-    font-family: 'Tourney', sans-serif;
-    color: white;
-    overflow-x: hidden;
-    padding-top: 70px;
+    margin: 0;                                      /*Enlève les marges par défaut du navigateur*/
+    font-family: 'Tourney', sans-serif;             /*Applique la police à tout le site*/
+    color: white;                                 /*Couleur du texte par défaut*/
+    overflow-x: hidden;                             /*Empêche le scroll horizontal*/
+    padding-top: 70px;                              /*Laisse de la place pour la navbar fixe*/
 
-    background: linear-gradient(
+    background: linear-gradient(                    /*Crée un dégradé*/
         120deg,
         #0a0a0f,
         #0a0a0f,
@@ -15,43 +15,43 @@ body {
         #2a0030
     );
 
-    background-size: 400% 400%;
-    animation: backgroundMove 15s ease infinite;
+    background-size: 400% 400%;                     /*Agrandit le fond pour permettre l’animation*/
+    animation: backgroundMove 15s ease infinite;    /*Lance une animation*/
 
-    cursor: none;
+    cursor: none;                                   /*Cache le curseur par défaut / remplacé par .cursor (JS)*/
 
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;                  /*Permet les effets de transition entre pages / Utilisé par : document.body.style.opacity = "0";*/
 }
 
 /* Animation fond */
 @keyframes backgroundMove {
-    0% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }             /*Effet : le dégradé "bouge" / Résultat : fond vivant et futuriste*/
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
 /* Effet lumière */
-body::before {
+body::before {                                      /*Pseudo-élément = élément invisible ajouté*/
     content: "";
     position: fixed;
     width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0,240,255,0.1), transparent 70%);
-    pointer-events: none;
-}
+    height: 100%;                                   /*Couvre tout l’écran*/
+    background: radial-gradient(circle, rgba(0,240,255,0.1), transparent 70%); /*Effet lumière circulaire*/
+    pointer-events: none;                           /*N’interfère pas avec la souris*/
+}                                                   /*Résultat : effet glow futuriste*/
 
 /* Grille futuriste */
-body::after {
+body::after {                                       /*Autre pseudo-élément*/
     content: "";
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60%;
-    animation: gridMove 20s linear infinite;
+    height: 60%;                                    /*Placé en bas*/
+    animation: gridMove 20s linear infinite;        /*Animation continue*/
 }
 
-@keyframes gridMove {
-    from { background-position: 0 0; }
+@keyframes gridMove {                               /*Effet : la grille "défile"*/
+    from { background-position: 0 0; }              /*Résultat : effet "sol numérique futuriste"*/
     to { background-position: 0 100px; }
 }

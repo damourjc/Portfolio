@@ -2,7 +2,7 @@ export function renderSkills(skills) {
     const container = document.querySelector(".skills-container");
     if (!container) return;
 
-    container.innerHTML = "";
+    container.innerHTML = ``;
 
     skills.forEach(skill => {
         container.innerHTML += `

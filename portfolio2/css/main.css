@@ -5,3 +5,22 @@
 @import url("effects.css");
 @import url("hud.css");
 @import url("intro.css");
+
+/*Rassembles tous tes fichiers CSS*/
+
+/*
+Architecture CSS modulaire :
+
+base.css → fondations
+layout.css → structure
+components.css → éléments UI
+effects.css → animations
+hud.css → design futuriste
+intro.css → page d’accueil
+*/
+
+/*
+L’ordre compte !
+
+Si deux styles se contredisent : le dernier gagne
+*/

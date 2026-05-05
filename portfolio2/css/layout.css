@@ -1,41 +1,41 @@
 /* ===== STRUCTURE ===== */
 
 .navbar {
-    position: fixed;
+    position: fixed;                        /*La barre reste collée en haut même quand tu scroll*/
     top: 0;
-    width: 100%;
-    padding: 15px;
-    display: flex;
+    width: 100%;                            /*Prend toute la largeur en haut*/
+    padding: 15px;                          /*Espace intérieur*/
+    display: flex;                          
     justify-content: center;
-    gap: 40px;
+    gap: 40px;                              /*Flexbox : centre les liens / espace entre eux = 40px*/
     background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(5px);
-    z-index: 10;
+    backdrop-filter: blur(5px);             /*Effet moderne : fond transparent / flou derrière (glassmorphism)*/
+    z-index: 10;                            /*Passe au-dessus du contenu*/
 }
 
 .navbar a {
     color: #00f0ff;
     text-decoration: none;
-    transition: 0.3s;
+    transition: 0.3s;                       /*Liens stylés : couleur cyan / pas de soulignement / animation fluide*/
 }
 
 .navbar a:hover {
-    text-shadow: 0 0 10px #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;        /*Effet glow au survol*/
 }
 
 /* Sections */
 section {
     padding: 80px 20px;
-    text-align: center;
+    text-align: center;                     /*Toutes les sections : espace vertical important / texte centré*/
 }
 
 .hero {
-    height: 100vh;
+    height: 100vh;                          /*Prend toute la hauteur de l’écran*/
     display: flex;
-    flex-direction: column; /* IMPORTANT */
+    flex-direction: column;                 /*Empile les éléments verticalement*/
     justify-content: center;
-    align-items: center;
-    text-align: center; /* IMPORTANT */
+    align-items: center;                    /*Centre parfaitement : verticalement / horizontalement*/
+    text-align: center;                     /*Centre le texte*/
 }
 
 

@@ -1,49 +1,49 @@
 /* ===== BOUTONS ===== */
 
 .btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: 1px solid transparent;
-    border-image: linear-gradient(90deg, #00f0ff, #ff00ff);
-    border-image-slice: 1;
+    margin-top: 20px;                                   /*Espace au-dessus du bouton*/
+    padding: 10px 20px;                                 /*Espace interne / Rend le bouton plus gros et cliquable*/
+    border: 1px solid transparent;                      /*Bordure invisible (base nécessaire pour effet gradient)*/
+    border-image: linear-gradient(90deg, #00f0ff, #ff00ff); /*bordure invisible (base nécessaire pour effet gradient) / crée une bordure en dégradé*/
+    border-image-slice: 1;                              /*Slice: 1 → applique le gradient sur toute la bordure / Résultat : bordure futuriste cyan → rose*/
     color: white;
-    background: transparent;
-    cursor: pointer;
-    transition: 0.3s;
+    background: transparent;                            /*Texte blanc + fond transparent*/
+    cursor: pointer;                                    /*Curseur cliquable (même si tu as un curseur custom)*/
+    transition: 0.3s;                                   /*Animation fluide pour hover*/
 }
 
 .btn:hover {
     box-shadow:
-        0 0 10px #00f0ff,
-        0 0 20px #ff00ff;
+        0 0 10px #00f0ff,                             /*Effet glow : halo cyan + rose / donne un effet néon*/
+        0 0 20px #ff00ff;                             /*Résultat : bouton vivant au survol*/
 }
 
 /* ===== CARTES ===== */
 
 .card {
-    width: 250px;
-    padding: 20px;
+    width: 250px;                                       /*Structure simple : largeur fixe / espace intérieur*/
+    padding: 20px;                                      /*MAIS : le vrai effet vient de cards.js (rotation 3D)*/
 }
 
 /* ===== PROJETS ===== */
 
 .projects {
     display: flex;
-    gap: 20px;
+    gap: 20px;                                          /*Flexbox : aligne les cartes horizontalement / gap = espace entre elles*/
 }
 
 /* ===== SKILLS ===== */
 
 .skill {
-    width: 300px;
+    width: 300px;                                       /*Conteneur d’une compétence*/
 }
 
 .bar {
     height: 10px;
-    background: #222;
+    background: #222;                                 /*Fond de la barre (gris foncé)*/
 }
 
 .progress {
     height: 10px;
-    background: linear-gradient(90deg, #00f0ff, #ff00ff);
+    background: linear-gradient(90deg, #00f0ff, #ff00ff); /*Barre colorée / Largeur définie en HTML ou JS : style="width:70%"*/
 }

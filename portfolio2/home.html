@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio - Home - Jean-Cédric</title>
+<title>Portfolio - Home - Jean-Cédric</title>                           <!-- Même commentaire que index.html-->
 
 <link rel="stylesheet" href="css/main.css">
 
@@ -13,31 +13,31 @@
 
 <body>
 
-    <canvas id="particles"></canvas>
+    <canvas id="particles"></canvas> <!-- Utilisé par particles.js / Sert à dessiner des particules en mouvement / Effet futuriste-->
 
     <div class="cursor"></div>
 
-    <nav class="navbar">
-        <a href="home.html">Accueil</a>
+    <nav class="navbar">                                <!-- <nav> = sémantique (bonne pratique)-->
+        <a href="home.html">Accueil</a>                 <!-- liens <a> = navigation entre pages-->
         <a href="projets.html">Projets</a>
         <a href="competences.html">Compétences</a>
-    </nav>
+    </nav>                                              <!-- Amélioré par navigation.js : animation de transition (fade)-->
 
     <!-- HERO -->
-    <div class="hero">
+    <div class="hero">                                  <!-- Section principale visible dès l’arrivée-->
         <h1 class="neon">Jean-Cédric</h1>
-        <p id="typing"></p>
-        <button class="btn" onclick="window.location.href='projets.html'">
+        <p id="typing"></p>                             <!-- Rempli par typing.js / effet "machine à écrire"-->
+        <button class="btn" onclick="window.location.href='projets.html'"> <!-- redirige vers projets / utilise JS directement dans HTML (simple mais pas idéal long terme)-->
             Voir mes projets
         </button>
     </div>
 
-    <!-- PROJETS -->
+    <!-- PROJETS -->                                    <!-- .hidden → invisible au début / devient visible avec animation via scroll.js-->
     <section class="hidden">
-        <h2 class="gradient-text">Projets</h2>
+        <h2 class="gradient-text">Projets</h2>          <!-- titre stylé-->
 
-        <div class="projects">
-            <div class="card">
+        <div class="projects">                          <!-- conteneur de cartes-->
+            <div class="card">                          <!-- Interactif avec cards.js / rotation 3D avec la souris-->
                 <h3>Projet : Portfolio</h3>
                 <p>Création d'un site portfolio</p>
             </div>
@@ -53,10 +53,10 @@
     <section class="hidden">
         <h2 class="gradient-text">Compétences</h2>
 
-        <div class="skill">
+        <div class="skill">                             <!-- Structure : nom (Python) + barre de progression-->
             <p>Python</p>
             <div class="bar">
-                <div class="progress" style="width:70%"></div>
+                <div class="progress" style="width:70%"></div> <!-- largeur dynamique = niveau-->
             </div>
         </div>
 
@@ -72,7 +72,7 @@
     <section class="hidden">
         <h2 class="gradient-text">À propos</h2>
 
-        <div class="terminal">
+        <div class="terminal">                          <!-- style "terminal hacker" / texte brut simulé-->
             > Initialisation...<br>
             > Chargement du profil...<br>
             > Développeur créatif<br>
