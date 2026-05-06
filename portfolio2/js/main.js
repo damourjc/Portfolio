@@ -1,32 +1,35 @@
-import { initParticles } from "./modules/particles.js";
-import { initCursor } from "./modules/cursor.js";
-import { initScrollAnimation } from "./modules/scroll.js";
-import { initTypingEffect } from "./modules/typing.js";
-import { initCards } from "./modules/cards.js";
-import { initNavigation } from "./modules/navigation.js";
-import { initHUD } from "./modules/hud.js";
-import { initSound } from "./modules/sound.js";
-import { initIntro } from "./modules/intro.js";
-import { initTerminal } from "./modules/terminal.js";
+/*Le cerveau global*/
+/*Modules*/                                                             //Rôle
+
+import { initParticles } from "./modules/particles.js";                 //Fond animé
+import { initCursor } from "./modules/cursor.js";                       //Curseur custom
+import { initScrollAnimation } from "./modules/scroll.js";              //Animation au scroll
+import { initTypingEffect } from "./modules/typing.js";                 //Effet machine à écrit
+import { initCards } from "./modules/cards.js";                         //Effet 3D
+import { initNavigation } from "./modules/navigation.js";               //Transitions pages
+import { initHUD } from "./modules/hud.js";                             //Drag & drop
+import { initSound } from "./modules/sound.js";                         //Sons
+import { initIntro } from "./modules/intro.js";                         //Pages d'entrée
+import { initTerminal } from "./modules/terminal.js";                   //Mini IA
 
 import { initApp } from "./mvc/controller/appController.js";
 
 import { initChart } from "./chart/chart-config.js";
 
 // Modules techniques
-initParticles();
-initCursor();
-initScrollAnimation();
-initTypingEffect();
-initCards();
-initNavigation();
-initHUD();
-initSound();
-initIntro();
-initTerminal();
+initParticles();                                                        //Démarre le fond animé
+initCursor();                                                           //Active le curseur personnalisé
+initScrollAnimation();                                                  //Active les animations au scroll
+initTypingEffect();                                                     //Lance l’effet texte
+initCards();                                                            //Active les cartes interactives
+initNavigation();                                                       //Transitions entre pages
+initHUD();                                                              //Permet de déplacer les fenêtres
+initSound();                                                            //Active les sons
+initIntro();                                                            //Gère la page d’accueil
+initTerminal();                                                         //Active le terminal interactif
 
 // MVC
-initApp();
-
+initApp();                                                              //Lance : renderProjects(projects); et renderSkills(skills);
+                                                                        //Donc : injecte les projets et injecte les compétences
 // Graph
-initChart();
+initChart();                                                            //Crée le graphique radar

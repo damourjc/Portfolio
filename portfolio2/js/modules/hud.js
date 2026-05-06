@@ -1,36 +1,36 @@
-export function initHUD() {
-    document.querySelectorAll(".hud-window").forEach(windowEl => {
+export function initHUD() {                                                 //Export
+    document.querySelectorAll(".hud-window").forEach(windowEl => {          //Cible toutes les fenêtres : <div class="hud-window">...</div>
 
-        let isDragging = false;
-        let offsetX, offsetY;
+        let isDragging = false;                                             //Servent à gérer le déplacement / Explication :
+        let offsetX, offsetY;                                               //isDragging → est-ce qu’on est en train de déplacer ? 
+                                                                            //offsetX/Y → décalage entre souris et coin de la fenêtre
+        const header = windowEl.querySelector(".hud-header");               //Récupération du header
+        if (!header) return;                                                //on ne peut déplacer que via le header / sécurité si pas trouvé
 
-        const header = windowEl.querySelector(".hud-header");
-        if (!header) return;
+        header.style.cursor = "move";                                       //Curseur visuel : change le curseur → UX claire
 
-        header.style.cursor = "move";
+        header.addEventListener("mousedown", (e) => {                       //Début du drag : déclenché quand tu cliques
+            isDragging = true;                                              //Activation du drag : on commence à déplacer
 
-        header.addEventListener("mousedown", (e) => {
-            isDragging = true;
+            offsetX = e.clientX - windowEl.offsetLeft;                      //Calcul du décalage pour éviter que la fenêtre “saute” / Exemple : Si tu cliques au milieu
+            offsetY = e.clientY - windowEl.offsetTop;                       //sans offset → la fenêtre saute au coin / avec offset → elle suit correctement
 
-            offsetX = e.clientX - windowEl.offsetLeft;
-            offsetY = e.clientY - windowEl.offsetTop;
+            windowEl.style.position = "absolute";                           //Permet de déplacer librement
+            windowEl.style.zIndex = 1000;                                   //Passe au-dessus des autres fenêtres
 
-            windowEl.style.position = "absolute";
-            windowEl.style.zIndex = 1000;
-
-            document.body.style.userSelect = "none";
+            document.body.style.userSelect = "none";                        //Désactiver sélection texte sinon tu sélectionnes du texte en bougeant
         });
 
-        document.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
+        document.addEventListener("mousemove", (e) => {                     //DÉPLACEMENT : déclenché en continu
+            if (!isDragging) return;                                        //Sécurité : ne bouge que si drag actif
 
-            windowEl.style.left = (e.clientX - offsetX) + "px";
-            windowEl.style.top = (e.clientY - offsetY) + "px";
+            windowEl.style.left = (e.clientX - offsetX) + "px";             //Nouvelle position : suit la souris
+            windowEl.style.top = (e.clientY - offsetY) + "px";              //Résultat : déplacement fluide 
         });
 
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-            document.body.style.userSelect = "auto";
+        document.addEventListener("mouseup", () => {                        //FIN DU DRAG : quand on relâche
+            isDragging = false;                                             //stop déplacement
+            document.body.style.userSelect = "auto";                        //réactive sélection texte
         });
 
     });
