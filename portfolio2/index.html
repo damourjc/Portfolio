@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Bienvenue - Portfolio</title>
 
-        <link rel="stylesheet" href="css/main.css">
-        <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap" rel="stylesheet"> <!-- Charge une police depuis Google Fonts, utilisée dans le CSS (font-family: 'Tourney') -->
+<head>
+    <meta charset="UTF-8">
 
-    </head>
+    <title>Bienvenue - Portfolio</title>
 
-    <body class="intro-page"> <!-- Classe spéciale → utilisée dans intro.css, pour centrer le contenu (flex + plein écran)-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
 
-        <div class="cursor"></div> <!-- Remplace le curseur classique, contrôlé par cursor.js-->
+    <!-- Police -->
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
-        <div class="intro-container"> <!-- Sert à regrouper le contenu de la page-->
-            <h1 class="neon intro-title"> <!-- h1 → titre principal (important SEO) / neon → effet visuel (CSS)-->
-                Jean-Cédric <span>Portfolio</span> <!-- <span> → permet de styliser "Portfolio" différemment-->
-            </h1>
+<body class="intro-page">
 
-            <button class="btn intro-btn"> <!-- Bouton stylé avec .btn / .intro-btn → style spécifique-->
-                Bienvenue                   <!-- Fonction : déclenche une transition + redirection vers home.html (géré dans intro.js)-->
-            </button>
-        </div>
+    <!-- PARTICULES -->
+    <canvas id="particles"></canvas>
 
-        <script type="module" src="js/main.js"></script> <!-- type="module" → permet d’utiliser import/export. Lance tous tes modules JS. C’est le cœur dynamique du site-->
+    <!-- CURSEUR -->
+    <div class="cursor"></div>
 
-        <audio id="hoverSound" src="hover.mp3"></audio> <!-- Prépare les sons / Utilisés dans sounds.js-->
-        <audio id="clickSound" src="click.mp3"></audio>
+    <!-- CONTENU INTRO -->
+    <div class="intro-container">
 
-    </body>
+        <h1 class="neon intro-title">
+            Jean-Cédric DAMOUR
+            <span>Portfolio</span>
+        </h1>
+
+        <button type="button" class="btn intro-btn">
+            Bienvenue
+        </button>
+
+    </div>
+
+    <!-- SONS -->
+    <audio id="hoverSound" src="assets/sounds/hover.mp3"></audio>
+    <audio id="clickSound" src="assets/sounds/click.mp3"></audio>
+
+    <!-- JS -->
+    <script type="module" src="js/introPage.js"></script>
+
+</body>
+
 </html>

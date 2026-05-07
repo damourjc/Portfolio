@@ -3,14 +3,48 @@
 .intro-page {
     display: flex;
     justify-content: center;
-    align-items: center;        /*Centre tout : horizontalement, verticalement*/
-    height: 100vh;              /*Prend toute la hauteur écran*/
-}                               /*Résultat : écran d’intro bien centré*/
+    align-items: center;
 
-.intro-title {
-    font-size: 3em;             /*Texte grand et visible*/
+    height: 100vh;
+
+    overflow: hidden;
 }
 
+/* CONTENEUR */
+.intro-container {
+    position: relative;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+/* TITRE */
+.intro-title {
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 3em;
+
+    margin: 0;
+}
+
+/* PORTFOLIO */
+.intro-title span {
+    position: absolute;
+
+    right: -40px;
+    bottom: -15px;
+
+    font-size: 0.35em;
+
+    color: #ff00ff;
+
+    letter-spacing: 3px;
+}
+
+/* BOUTON */
 .intro-btn {
-    margin-top: 30px;           /*Espace entre titre et bouton*/
+    margin-top: 40px;
 }
