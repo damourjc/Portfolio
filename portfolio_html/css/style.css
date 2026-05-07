@@ -14,7 +14,10 @@
 body {
 	font-family: var(--font-main);
 	color: var(--color-text);
-	background: var(--color-secondary);
+	background: var(--color-accent);
+	display: flex;
+	text-align: center;
+	flex-direction: column;
 }
 
 header {
@@ -39,7 +42,7 @@ header {
 }
 
 .contact-page{
-
+	
 }
 
  .form-group{
