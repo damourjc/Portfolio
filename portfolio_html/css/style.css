@@ -13,7 +13,7 @@
 
 body {
 	font-family: var(--font-main);
-	color: var(--color-accent);
+	color: var(--color-text);
 	background: var(--color-secondary);
 }
 
@@ -21,3 +21,43 @@ header {
 	background: var(--color-bg);
     position: sticky;
 }
+
+.presentation{
+	background: var(--color-bg);
+}
+
+#about{
+	background: var(--color-bg);
+}
+
+#projet{
+	background: var(--color-bg);
+}
+
+#contact{
+	background: var(--color-bg);
+}
+
+.contact-page{
+
+}
+
+ .form-group{
+
+ }
+
+ label{
+
+ }
+
+ input{
+
+ }
+
+ textarea{
+
+ }
+
+ .alert{
+	
+ }
