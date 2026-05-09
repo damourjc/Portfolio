@@ -1,0 +1,324 @@
+/* =========================================
+   PROJETS FUTURISTES
+========================================= */
+
+.projects-section {
+    padding: 120px 50px;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+
+    color: #00f0ff;
+
+    text-shadow:
+        0 0 10px #00f0ff,
+        0 0 20px #00f0ff;
+}
+
+/* CONTENEUR HORIZONTAL */
+.projects-track {
+    display: flex;
+    gap: 60px;
+
+    overflow-x: auto;
+
+    padding: 40px;
+
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar futuriste */
+.projects-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.projects-track::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #00f0ff, #ff00ff);
+    border-radius: 10px;
+}
+
+/* DOSSIER */
+.project-folder {
+    position: relative;
+
+    min-width: 350px;
+    height: 220px;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+
+    transition: transform 0.4s ease;
+}
+
+/* Effet profondeur */
+.project-folder:hover {
+    transform:
+        translateY(-10px)
+        scale(1.03);
+}
+
+/* Couches arrière */
+.folder-layer {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(0,240,255,0.2);
+
+    backdrop-filter: blur(10px);
+}
+
+.layer-back {
+    transform:
+        translate(20px, -20px);
+
+    opacity: 0.3;
+}
+
+.layer-middle {
+    transform:
+        translate(10px, -10px);
+
+    opacity: 0.6;
+}
+
+/* Contenu principal */
+.folder-content {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(0,0,0,0.35);
+
+    border: 1px solid rgba(0,240,255,0.3);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 20px rgba(0,240,255,0.15);
+
+    z-index: 5;
+}
+
+/* TAG */
+.folder-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 6px 12px;
+
+    border: 1px solid #00f0ff;
+
+    font-size: 0.8rem;
+
+    color: #00f0ff;
+}
+
+/* TITRE */
+.folder-content h2 {
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+/* TEXTE */
+.folder-content p {
+    color: rgba(255,255,255,0.7);
+
+    line-height: 1.6;
+}
+
+/* =========================================
+   ANIMATIONS FUTURISTES
+========================================= */
+
+/* Glow animé */
+.project-folder::after {
+    content: "";
+
+    position: absolute;
+    inset: -2px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0,240,255,0.3),
+        transparent,
+        rgba(255,0,255,0.3),
+        transparent
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.project-folder:hover::after {
+    opacity: 1;
+}
+
+/* Animation flottante */
+.project-folder {
+    animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.project-folder:hover .folder-content {
+    border-color: #00f0ff;
+
+    box-shadow:
+        0 0 20px rgba(0,240,255,0.3),
+        0 0 40px rgba(255,0,255,0.15);
+
+    transform: scale(1.02);
+}
+
+/* =========================================
+   MODAL FUTURISTE
+========================================= */
+
+.project-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.7);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s ease;
+
+    z-index: 999;
+}
+
+/* OUVERT */
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* FENÊTRE */
+.modal-window {
+    position: relative;
+
+    width: 600px;
+    max-width: 90%;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background: rgba(10,10,20,0.8);
+
+    border: 1px solid rgba(0,240,255,0.3);
+
+    box-shadow:
+        0 0 30px rgba(0,240,255,0.2);
+
+    transform: scale(0.8);
+
+    transition: 0.4s ease;
+}
+
+/* Animation ouverture */
+.project-modal.active .modal-window {
+    transform: scale(1);
+}
+
+/* TAG */
+.modal-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 6px 14px;
+
+    border: 1px solid #00f0ff;
+
+    color: #00f0ff;
+
+    font-size: 0.8rem;
+}
+
+/* TITRE */
+.modal-window h2 {
+    margin-bottom: 20px;
+
+    color: white;
+
+    font-size: 2rem;
+}
+
+/* TEXTE */
+.modal-window p {
+    color: rgba(255,255,255,0.75);
+
+    line-height: 1.7;
+}
+
+/* TECH */
+.modal-tech {
+    margin-top: 30px;
+
+    color: #ff00ff;
+}
+
+/* BOUTON FERMER */
+.modal-close {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}

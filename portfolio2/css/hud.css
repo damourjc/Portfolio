@@ -1,15 +1,36 @@
 /* ===== HUD WINDOWS ===== */
 
 .hud-window {
+    width: 80%;
+    text-align: center  ;
     position: relative;
     background: rgba(0,0,0,0.4);      /*Bloc semi-transparent / Effet : “fenêtre flottante”*/
+    border: 1px solid rgba(255,255,255,0.2); /*Bordure subtile / Améliore l’effet de profondeur*/
+    border-radius: 10px;              /*Coins arrondis / Style futuriste*/
 }
 
 /* Coins */
 .hud-window::before,
 .hud-window::after {
     content: "";
-    position: absolute;                 /*Permet d’ajouter : coins stylés / bordures custom*/
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #00f0ff;                 /*Permet d’ajouter : coins stylés / bordures custom*/
+}
+
+.hud-window::before {
+    top: -5px;
+    left: -5px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.hud-window::after {
+    bottom: -5px;
+    right: -5px;
+    border-left: none;
+    border-top: none;
 }
 
 /* Lignes */

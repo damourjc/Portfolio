@@ -11,6 +11,8 @@ import { initHUD } from "./modules/hud.js";                             //Drag &
 import { initSound } from "./modules/sound.js";                         //Sons
 import { initIntro } from "./modules/intro.js";                         //Pages d'entrée
 import { initTerminal } from "./modules/terminal.js";                   //Mini IA
+import { initProjectsFX } from "./modules/projectsFX.js";   //Effets spéciaux pour les projets (ex: survol, filtres, etc.)
+import { initProjectModal } from "./modules/projectModal.js";   //Fenêtre modale pour les projets (détails, images, etc.)
 
 import { initApp } from "./mvc/controller/appController.js";
 
@@ -27,6 +29,9 @@ initHUD();                                                              //Permet
 initSound();                                                            //Active les sons
 initIntro();                                                            //Gère la page d’accueil
 initTerminal();                                                         //Active le terminal interactif
+initProjectsFX();                                                        //Active les effets spéciaux pour les projets (ex: survol, filtres, etc.)
+initProjectModal();                                                        //Active la fenêtre modale pour les projets (détails, images, etc.)
+
 
 // MVC
 initApp();                                                              //Lance : renderProjects(projects); et renderSkills(skills);

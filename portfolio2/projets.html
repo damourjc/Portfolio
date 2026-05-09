@@ -24,47 +24,90 @@
     </nav>
 
     <!-- PROJETS -->
-    <section class="hidden">
-        <div class="hud-window">                        <!-- c’est une "fenêtre" style interface futuriste / design contrôlé par hud.css / comportement interactif via hud.js-->
-            <div class="hud-lines"></div>               <!-- hud-lines → grille/lignes-->  
-            <div class="scan-line"></div>               <!-- scan-line → effet scan (comme un radar)-->
-            <div class="hud-header">                    <!-- zone du haut (comme une fenêtre Windows)-->
-                <h2 class="gradient-text">Projets</h2>
+    <section class="hidden projects-section">
 
-                <div class="hud-dots">                  <!-- imite : fermer / réduire / agrandir - purement esthétique-->
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <h1 class="projects-title">
+            ARCHIVES // PROJETS
+        </h1>
+
+        <div class="projects-track">
+
+            <!-- DOSSIER 1 -->
+            <div class="project-folder"
+
+                data-title="Portfolio Futuriste"
+
+                data-description="
+                Interface immersive cyberpunk avec animations,
+                HUD et système modulaire.
+                "
+
+                data-tech="HTML • CSS • JS"
+            >
+
             </div>
 
-            <div id="projects-container" class="hud-grid"> <!-- id="projects-container" → utilisé par MVC / hud-grid → layout (grille CSS)-->
-                                                           <!-- Ce bloc est : rempli dynamiquement par JavaScript via : renderProjects(projects); dans : projectsView.js-->
-                <div class="project-card">                  <!-- carte de projet-->
-                    <img src="projet1.png" alt="Projet">
+            <!-- DOSSIER 2 -->
+            <div class="project-folder"
 
-                    <div class="project-content">
-                        <h3>Projet 1</h3>
-                        <p>
-                            Création d’un portfolio futuriste avec animations,
-                            effets interactifs et structure multi-pages.
-                        </p>
-                    </div>
-                </div>
+                data-title="Portfolio Futuriste"
 
-                <div class="project-card">
-                    <img src="projet2.png" alt="Projet">
+                data-description="
+                Interface immersive cyberpunk avec animations,
+                HUD et système modulaire.
+                "
 
-                    <div class="project-content">
-                        <h3>Projet 2</h3>
-                        <p>Description...</p>
-                    </div>
-                </div>
+                data-tech="HTML • CSS • JS"
+            >
 
+            <!-- DOSSIER 3 -->
+            <div class="project-folder"
+
+                data-title="Portfolio Futuriste"
+
+                data-description="
+                Interface immersive cyberpunk avec animations,
+                HUD et système modulaire.
+                "
+
+                data-tech="HTML • CSS • JS"
+            >
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+        MODAL FUTURISTE
+    ========================================= -->
+
+    <div class="project-modal" id="projectModal">
+
+        <div class="modal-window">
+
+            <button class="modal-close" id="closeModal">
+                ✕
+            </button>
+
+            <span class="modal-tag">
+                PROJECT_DATA
+            </span>
+
+            <h2 id="modalTitle">
+                Portfolio Futuriste
+            </h2>
+
+            <p id="modalDescription">
+                Description du projet...
+            </p>
+
+            <div class="modal-tech" id="modalTech">
+                HTML • CSS • JS
             </div>
 
         </div>
-    </section>
+
+    </div>
 
     <script type="module" src="js/main.js"></script>
 

@@ -2,8 +2,8 @@
 
 .btn {
     margin-top: 20px;                                   /*Espace au-dessus du bouton*/
-    padding: 10px 20px;                                 /*Espace interne / Rend le bouton plus gros et cliquable*/
-    border: 1px solid transparent;                      /*Bordure invisible (base nécessaire pour effet gradient)*/
+    padding: 10px 20px;                                 /*Espace interne / Rend le bouton plus gros et cliquable*/border: 1px soli
+    d transparent;                      /*Bordure invisible (base nécessaire pour effet gradient)*/
     border-image: linear-gradient(90deg, #00f0ff, #ff00ff); /*bordure invisible (base nécessaire pour effet gradient) / crée une bordure en dégradé*/
     border-image-slice: 1;                              /*Slice: 1 → applique le gradient sur toute la bordure / Résultat : bordure futuriste cyan → rose*/
     color: white;
