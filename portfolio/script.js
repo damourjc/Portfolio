@@ -21,7 +21,7 @@ document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
 
 // Effet typing
-const text = "Développeur créatif | IA | Projets innovants";
+const text = "Développeur informatique";
 let index = 0;
 const element = document.getElementById("typing");
 
@@ -37,6 +37,8 @@ if (element) {
     element.innerHTML = "";
     typeEffect();
 }
+
+// Particules animées
 
 for (let i = 0; i < 80; i++) {
     particles.push({
@@ -66,6 +68,8 @@ function animateParticles() {
 
 animateParticles();
 
+// Curseur personnalisé
+
 document.addEventListener("mousemove", (e) => {
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
@@ -80,6 +84,8 @@ document.querySelectorAll("button, .card").forEach(el => {
         cursor.style.transform = "translate(-50%, -50%) scale(1)";
     });
 });
+
+// Effet 3D sur les cartes
 
 document.querySelectorAll(".card").forEach(card => {
 
