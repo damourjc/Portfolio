@@ -1,12 +1,20 @@
 //Rôles : coordonne tout
 
-import { projects } from "../model/projects.js";          //Imports Model
 import { skills } from "../model/skills.js";
 
-import { renderProjects } from "../view/projectsView.js"; //Imports View
+import { renderProjects } from "../view/projectsView.js";
 import { renderSkills } from "../view/skillsView.js";
 
-export function initApp() {                               //Export controller
-    //renderProjects(projects);                             //Affichage projets - envoie : les données, à la vue
-    renderSkills(skills);                                 //Affichage compétences
+export async function initApp() {
+
+    // CHARGEMENT JSON
+    const response =
+        await fetch("./data/projects.json");
+
+    const projects =
+        await response.json();
+
+    renderProjects(projects);
+
+    renderSkills(skills);
 }

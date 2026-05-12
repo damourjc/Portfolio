@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Portfolio Futuriste",
+
+        "description":
+        "Interface immersive cyberpunk avec animations, HUD et système modulaire.",
+
+        "tech":
+        ["HTML", "CSS", "JS"],
+
+        "tag":
+        "DOSSIER_01"
+    },
+
+    {
+        "title": "IA Assistant",
+
+        "description":
+        "Projet d’assistant intelligent personnel orienté productivité.",
+
+        "tech":
+        ["Python", "IA", "JSON"],
+
+        "tag":
+        "DOSSIER_02"
+    },
+
+    {
+        "title": "Pixel Engine",
+
+        "description":
+        "Application de dessin pixel art avec zoom multi-fenêtres.",
+
+        "tech":
+        ["Canvas", "JS", "UI"],
+
+        "tag":
+        "DOSSIER_03"
+    }
+]

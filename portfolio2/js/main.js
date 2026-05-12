@@ -19,22 +19,25 @@ import { initApp } from "./mvc/controller/appController.js";
 import { initChart } from "./chart/chart-config.js";
 
 // Modules techniques
-initParticles();                                                        //Démarre le fond animé
-initCursor();                                                           //Active le curseur personnalisé
-initScrollAnimation();                                                  //Active les animations au scroll
-initTypingEffect();                                                     //Lance l’effet texte
-initCards();                                                            //Active les cartes interactives
-initNavigation();                                                       //Transitions entre pages
-initHUD();                                                              //Permet de déplacer les fenêtres
-initSound();                                                            //Active les sons
-initIntro();                                                            //Gère la page d’accueil
-initTerminal();                                                         //Active le terminal interactif
-initProjectsFX();                                                        //Active les effets spéciaux pour les projets (ex: survol, filtres, etc.)
-initProjectModal();                                                        //Active la fenêtre modale pour les projets (détails, images, etc.)
+
+(async () => {
+    initParticles();                                                        //Démarre le fond animé
+    initCursor();                                                           //Active le curseur personnalisé
+    initScrollAnimation();                                                  //Active les animations au scroll
+    initTypingEffect();                                                     //Lance l’effet texte
+    initCards();                                                            //Active les cartes interactives
+    initNavigation();                                                       //Transitions entre pages
+    initHUD();                                                              //Permet de déplacer les fenêtres
+    initSound();                                                            //Active les sons
+    initIntro();                                                            //Gère la page d’accueil
+    initTerminal();                                                         //Active le terminal interactif
+    initProjectsFX();                                                        //Active les effets spéciaux pour les projets (ex: survol, filtres, etc.)
+    initProjectModal();                                                        //Active la fenêtre modale pour les projets (détails, images, etc.)
 
 
-// MVC
-initApp();                                                              //Lance : renderProjects(projects); et renderSkills(skills);
-                                                                        //Donc : injecte les projets et injecte les compétences
-// Graph
-initChart();                                                            //Crée le graphique radar
+    // MVC
+    await initApp();                                                            //Lance : renderProjects(projects); et renderSkills(skills);
+                                                                            //Donc : injecte les projets et injecte les compétences
+    // Graph
+    initChart();                                                            //Crée le graphique radar
+})();

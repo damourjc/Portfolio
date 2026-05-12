@@ -1,20 +1,45 @@
 //Rôles : affiche projets
 
-export function renderProjects(projects) {                  //Export : reçoit les données en paramètre
-    const container = document.querySelector("#projects-container"); //Sélection conteneur - récupère : <div id="projects-container"></div>
-    if (!container) return;                                 //Sécurité
+export function renderProjects(projects) {
 
-    container.innerHTML = "";                               //Nettoyage : vide le contenu avant affichage / utile pour : refresh et mise à jour dynamique
+    const container =
+        document.getElementById("projectsTrack");
 
-    projects.forEach(p => {                                 //Boucle projets : parcourt chaque projet
-        container.innerHTML += `                            
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>${p.title}</h3>
-                    <p>${p.description}</p>
-                    <small>${p.tech.join(", ")}</small>
-                </div>
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    projects.forEach(project => {
+
+        container.innerHTML += `
+
+        <div class="project-folder"
+
+            data-title="${project.title}"
+
+            data-description="${project.description}"
+
+            data-tech="${project.tech.join(" • ")}"
+        >
+
+            <div class="folder-layer layer-back"></div>
+            <div class="folder-layer layer-middle"></div>
+
+            <div class="folder-content">
+
+                <span class="folder-tag">
+                    ${project.tag}
+                </span>
+
+                <h2>${project.title}</h2>
+
+                <p>
+                    ${project.description}
+                </p>
+
             </div>
-        `; //Ajout HTML : ajoute du HTML dynamiquement / Carte projet : <div class="project-card"> / Données dynamiques : ${}, injecte une variable dans le HTML
-    }); //<p>${p.description}</p> / Tableau → texte : <small>${p.tech.join(", ")}</small> / join() : Transforme : ["HTML", "CSS", "JS"] en HTML, CSS, JS
+
+        </div>
+        `;
+    });
 }
