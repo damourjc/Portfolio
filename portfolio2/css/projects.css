@@ -3,7 +3,15 @@
 ========================================= */
 
 .projects-section {
-    padding: 120px 50px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 0 40px;
 }
 
 .projects-title {
@@ -21,45 +29,45 @@
 /* CONTENEUR HORIZONTAL */
 .projects-track {
     display: flex;
-    gap: 60px;
+    justify-content: center;
+    align-items: center;
 
-    overflow-x: auto;
+    gap: 40px;
 
-    padding: 40px;
+    width: 100%;
+    height: 600px;
 
-    scroll-behavior: smooth;
-}
+    overflow: hidden;
 
-/* Scrollbar futuriste */
-.projects-track::-webkit-scrollbar {
-    height: 8px;
-}
-
-.projects-track::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #00f0ff, #ff00ff);
-    border-radius: 10px;
+    position: relative;
 }
 
 /* DOSSIER */
 .project-folder {
     position: relative;
 
-    min-width: 350px;
-    height: 220px;
+    width: 260px;
+    height: 420px;
 
     flex-shrink: 0;
 
     cursor: pointer;
 
-    transition: transform 0.4s ease;
-}
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        filter 0.4s ease;
 
-/* Effet profondeur */
-.project-folder:hover {
+    opacity: 0.35;
+
+    filter: blur(1px);
+
     transform:
-        translateY(-10px)
-        scale(1.03);
-}
+        scale(0.85)
+        rotateY(15deg);
+
+    transform-style: preserve-3d;
+}   
 
 /* Couches arrière */
 .folder-layer {
@@ -91,8 +99,30 @@
     opacity: 0.6;
 }
 
+/* =========================================
+   INFOS FLOTTANTES
+========================================= */
+
+.folder-info {
+    position: absolute;
+
+    top: -70px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 20;
+}
+
 /* Contenu principal */
 .folder-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
     position: relative;
 
     width: 100%;
@@ -127,6 +157,8 @@
     font-size: 0.8rem;
 
     color: #00f0ff;
+
+    opacity: 0.5;
 }
 
 /* TITRE */
@@ -141,6 +173,21 @@
     color: rgba(255,255,255,0.7);
 
     line-height: 1.6;
+}
+
+.folder-tag,
+.folder-content h2,
+.folder-content p {
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: 0.4s ease;
+}
+
+/* Cache le titre par défaut */
+.folder-info h2 {
+    display: none;
 }
 
 /* =========================================
@@ -321,4 +368,64 @@
     font-size: 1.2rem;
 
     cursor: pointer;
+}
+
+/* =========================================
+   CARTE ACTIVE
+========================================= */
+
+.active-folder {
+    opacity: 1;
+
+    transform: scale(1.05);
+
+    z-index: 10;
+}
+
+.project-folder.active-folder {
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+        scale(1.1)
+        rotateY(0deg)
+        translateY(-20px);
+
+    z-index: 20;
+}
+
+/* Affichage infos */
+.project-folder.active-folder
+.folder-tag,
+
+.project-folder.active-folder
+.folder-content h2 {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* Description cachée */
+.project-folder.active-folder
+.folder-content p {
+    display: none;
+}
+
+/* Projet actif : affiche titre */
+.active-folder .folder-info h2 {
+    display: block;
+
+    color: white;
+
+    font-size: 1.8rem;
+
+    text-shadow:
+        0 0 10px #00f0ff;
+
+    margin-top: 10px;
+}
+
+.active-folder .folder-tag {
+    opacity: 1;
 }

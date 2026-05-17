@@ -9,11 +9,12 @@ export function renderProjects(projects) {
 
     container.innerHTML = "";
 
-    projects.forEach(project => {
+    projects.forEach((project, index) => {
 
         container.innerHTML += `
 
-        <div class="project-folder"
+        <div class="project-folder
+            ${index === 1 ? "active-folder" : ""}"
 
             data-title="${project.title}"
 
@@ -22,22 +23,25 @@ export function renderProjects(projects) {
             data-tech="${project.tech.join(" • ")}"
         >
 
-            <div class="folder-layer layer-back"></div>
-            <div class="folder-layer layer-middle"></div>
-
-            <div class="folder-content">
+            <!-- INFOS FLOTTANTES -->
+            <div class="folder-info">
 
                 <span class="folder-tag">
                     ${project.tag}
                 </span>
 
-                <h2>${project.title}</h2>
-
-                <p>
-                    ${project.description}
-                </p>
+                <h2>
+                    ${project.title}
+                </h2>
 
             </div>
+
+            <!-- COUCHES -->
+            <div class="folder-layer layer-back"></div>
+            <div class="folder-layer layer-middle"></div>
+
+            <!-- DOSSIER -->
+            <div class="folder-content"></div>
 
         </div>
         `;
