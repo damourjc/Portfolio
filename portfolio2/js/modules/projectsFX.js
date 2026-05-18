@@ -1,39 +1,119 @@
 export function initProjectsFX() {
 
-    const folders = document.querySelectorAll(".project-folder");
+    const folders =
+        document.querySelectorAll(".project-folder");
 
-    folders.forEach(folder => {
+    if (!folders.length) return;
 
-        folder.addEventListener("mousemove", (e) => {
+    let activeIndex = 0;
 
-            const rect = folder.getBoundingClientRect();
+    updateCarousel();
 
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    folders.forEach((folder, index) => {
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+        folder.addEventListener("click", () => {
 
-            const rotateX = (y - centerY) / 20;
-            const rotateY = -(x - centerX) / 20;
+            activeIndex = index;
 
-            folder.style.transform = `
-                perspective(1000px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                scale(1.03)
-            `;
-        });
+            updateCarousel();
 
-        folder.addEventListener("mouseleave", () => {
-
-            folder.style.transform = `
-                perspective(1000px)
-                rotateX(0deg)
-                rotateY(0deg)
-                scale(1)
-            `;
         });
 
     });
+
+    // =====================================
+    // POSITIONNEMENT
+    // =====================================
+
+    function updateCarousel() {
+
+        folders.forEach((folder, index) => {
+
+            const offset = index - activeIndex;
+
+            // reset
+            folder.classList.remove("active-folder");
+
+            // ACTIF
+            if (offset === 0) {
+
+                folder.classList.add("active-folder");
+
+                folder.style.transform = `
+                    translateX(0px)
+                    scale(1.1)
+                    rotateY(0deg)
+                `;
+
+            }
+
+            // GAUCHE
+            else if (offset < 0) {
+
+                folder.style.transform = `
+                    translateX(${offset * 220}px)
+                    scale(0.8)
+                    rotateY(25deg)
+                `;
+            }
+
+            // DROITE
+            else {
+
+                folder.style.transform = `
+                    translateX(${offset * 220}px)
+                    scale(0.8)
+                    rotateY(-25deg)
+                `;
+            }
+
+        });
+
+    }
+
+    updateActiveProject();
+
+    window.addEventListener("resize", () => {
+        updateActiveProject();
+    });
+
+}
+
+export function updateActiveProject() {
+
+    const folders =
+        document.querySelectorAll(".project-folder");
+
+    if (folders.length === 0) return;
+
+    let closestFolder = null;
+    let closestDistance = Infinity;
+
+    const screenCenter = window.innerWidth / 2;
+
+    folders.forEach(folder => {
+
+        const rect =
+            folder.getBoundingClientRect();
+
+        const folderCenter =
+            rect.left + rect.width / 2;
+
+        const distance =
+            Math.abs(screenCenter - folderCenter);
+
+        if (distance < closestDistance) {
+
+            closestDistance = distance;
+            closestFolder = folder;
+        }
+    });
+
+    folders.forEach(folder => {
+        folder.classList.remove("active-folder");
+    });
+
+    if (closestFolder) {
+        closestFolder.classList.add("active-folder");
+    }
 }

@@ -14,7 +14,7 @@ export function renderProjects(projects) {
         container.innerHTML += `
 
         <div class="project-folder
-            ${index === 1 ? "active-folder" : ""}"
+            <div class="project-folder"
 
             data-title="${project.title}"
 
